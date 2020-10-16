@@ -1,6 +1,14 @@
 name: Push to DingTalk
 
 on:
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+      tags:
+        description: 'Test scenario tags'  
   push:
     branches: [ $default-branch ]
   # 每天早上 1点30分 拉取最新数据
