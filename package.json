@@ -1,0 +1,26 @@
+{
+  "name": "sz-real-estate-actions",
+  "version": "1.0.0",
+  "description": "sz-real-estate-actions",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run dingtalk",
+    "dingtalk": "node src/dingtalk.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhoukekestar/sz-real-estate-actions.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhoukekestar/sz-real-estate-actions/issues"
+  },
+  "homepage": "https://github.com/zhoukekestar/sz-real-estate-actions#readme",
+  "dependencies": {
+    "moment": "^2.29.1",
+    "node-fetch": "^2.6.1"
+  }
+}
