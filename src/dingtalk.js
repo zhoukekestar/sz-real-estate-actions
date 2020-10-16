@@ -7,7 +7,8 @@ fetch('http://sz.tmsf.com/newhouse/property_33_431137829_price.htm')
   .then(d => {
     const arr = d.match(/页数\s+\d+\/(\d+)\s?总数：\s?(\d+)/);
 
-    pushMessage(`date: ${moment().format('YYYY-MM-DD HH:mm:ss')}\ntotal: ${arr[2]}`)
+    // 北京时间
+    pushMessage(`date: ${moment().tz('Asia/Shanghai').format('YYYY-MM-DD HH:mm:ss')}\ntotal: ${arr[2]}`)
   });
 
 function pushMessage(msg) {
