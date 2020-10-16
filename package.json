@@ -21,6 +21,7 @@
   "homepage": "https://github.com/zhoukekestar/sz-real-estate-actions#readme",
   "dependencies": {
     "moment": "^2.29.1",
+    "moment-timezone": "^0.5.31",
     "node-fetch": "^2.6.1"
   }
 }
