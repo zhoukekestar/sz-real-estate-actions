@@ -8,7 +8,7 @@ on:
         required: true
         default: 'warning'
       tags:
-        description: 'Test scenario tags'  
+        description: 'Test scenario tags'
   push:
     branches: [ $default-branch ]
   # 每天早上 1点30分 拉取最新数据
@@ -32,4 +32,5 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+    - run: npm i
     - run: npm run dingtalk
