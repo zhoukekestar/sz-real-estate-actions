@@ -1,6 +1,8 @@
 name: Push Real Estate Info to DingTalk
 
 on:
+  push:
+    branches: [ $default-branch ]
   # 每天早上 1点30分 拉取最新数据
   schedule:
   # - cron: "30 1 * * *"
