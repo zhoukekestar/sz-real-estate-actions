@@ -1,4 +1,4 @@
-name: Push Real Estate Info to DingTalk
+name: Push Real Estate to DingTalk
 
 on:
   push:
