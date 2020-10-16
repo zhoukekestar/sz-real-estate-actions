@@ -3,7 +3,9 @@ name: Push Real Estate Info to DingTalk
 on:
   # 每天早上 1点30分 拉取最新数据
   schedule:
-  - cron: "30 1 * * *"
+  # - cron: "30 1 * * *"
+  # 每分钟执行，用于测试
+  - cron: "*/1 * * * *"
 
 jobs:
   dingtalk:
