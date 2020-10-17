@@ -1,6 +1,7 @@
 console.log('index.js');
 const fetch = require('node-fetch');
 const moment = require('moment-timezone');
+const pushToSheet = require('./sheet');
 
 let total = null;
 let sold = null;
@@ -27,23 +28,25 @@ Promise.all([
       .tz('Asia/Shanghai')
       .format('YYYY-MM-DD HH:mm:ss')}\ntotal: ${total}\nsold: ${sold}`
   );
+
+  // 保存到 Google Sheet
+  pushToSheet([
+    [moment().tz('Asia/Shanghai').format('YYYY-MM-DD HH:mm:ss'), total, sold],
+  ]);
 });
 
 function pushMessage(msg) {
   console.log(`push message to dingtalk: ${msg}`);
-  fetch(
-    `https://oapi.dingtalk.com/robot/send?access_token=81002b601e36e1ed5b22f1cd72a2e671f03af3f86124abfdf2dec9baf0ab5ce8`,
-    {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json',
+  fetch(process.env.DINGTALK_ROBOT_URL, {
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json',
+    },
+    body: JSON.stringify({
+      msgtype: 'text',
+      text: {
+        content: msg,
       },
-      body: JSON.stringify({
-        msgtype: 'text',
-        text: {
-          content: msg,
-        },
-      }),
-    }
-  );
+    }),
+  });
 }

@@ -28,3 +28,9 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm i
     - run: npm run dingtalk
+      env:
+        DINGTALK_ROBOT_URL: ${{secrets.DINGTALK_ROBOT_URL}}
+        SHEETS_CLIENT_EMAIL: ${{secrets.SHEETS_CLIENT_EMAIL}}
+        SHEETS_PRIVATE_KEY: ${{secrets.SHEETS_PRIVATE_KEY}}
+        SHEETS_PRIVATE_KEY_ID: ${{secrets.SHEETS_PRIVATE_KEY_ID}}
+
