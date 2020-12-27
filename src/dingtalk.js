@@ -6,15 +6,19 @@ const pushToSheet = require('./sheet');
 let total = null;
 let sold = null;
 
+const LOUPAN_ID = '33_3158256'
+
+require('./tmsf/index');
+
 Promise.all([
-  fetch('http://sz.tmsf.com/newhouse/property_33_431137829_price.htm')
+  fetch(`http://sz.tmsf.com/newhouse/property_${LOUPAN_ID}_price.htm`)
     .then(d => d.text())
     .then(d => {
       const arr = d.match(/页数\s+\d+\/(\d+)\s?总数：\s?(\d+)/);
       return arr[2];
     }),
   fetch(
-    'http://sz.tmsf.com/newhouse/property_33_431137829_price.htm?isopen=1&presellid=&buildingid=&area=&allprice=&housestate=2&housetype=&page='
+    `http://sz.tmsf.com/newhouse/property_${LOUPAN_ID}_price.htm?isopen=1&presellid=&buildingid=&area=&allprice=&housestate=2&housetype=&page=`
   )
     .then(d => d.text())
     .then(d => {

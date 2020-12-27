@@ -12,3 +12,9 @@ sz-real-estate-actions
 * `tnpm i http-proxy-to-socks`
 * `tnpx hpts -s 127.0.0.1:13659 -p 8080`
 * `HTTPS_PROXY=http://127.0.0.1:8080 HTTP_PROXY=http://127.0.0.1:8080 node src/sheet.js`
+
+# 常见问题
+* The incoming JSON object does not contain a client_email field
+  * 未传入环境变量导致
+* 无任何返回或错误提示
+  * 请使用 http 代理，并确保未使用 socks 代理

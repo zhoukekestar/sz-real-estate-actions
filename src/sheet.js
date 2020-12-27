@@ -15,7 +15,7 @@ const credentials = {
     'https://www.googleapis.com/robot/v1/metadata/x509/githubactions%40quickstart-1602919096459.iam.gserviceaccount.com',
 };
 
-module.exports = async values => {
+module.exports = async (values, range = 'data') => {
   const client = new google.auth.GoogleAuth({
     scopes,
     credentials,
@@ -33,7 +33,7 @@ module.exports = async values => {
 
   await sheets.spreadsheets.values.append({
     spreadsheetId: '1SnADYAtfqc0V9MczRF5QQ8s8UW-nldIJS5IS5LvkEVc',
-    range: 'data',
+    range,
     valueInputOption: 'RAW',
     resource: {
       values,
