@@ -41,16 +41,21 @@ async function getData(LOUPAN_ID) {
     const doc = await fetchDocument(href);
 
     var res = [];
-    for (const tr of doc.querySelectorAll(
-      'div.bggrey.w1000 > div:nth-child(8) > div > div.onbuildshow_contant.colordg.ft14 > div > table > tbody.qita tr'
-    )) {
-      res.push(
-        Array.from(tr.querySelectorAll('td'))
-          .map(t => `${parseTd(t)}${t.textContent}`.replace(/\s/g, ''))
-          .map(t => t.replace('㎡', ''))
-          .map(t => t.replace('%', ''))
-          .map(t => t.trim())
-      );
+
+    try {
+      for (const tr of doc.querySelectorAll(
+        'div.bggrey.w1000 > div:nth-child(8) > div > div.onbuildshow_contant.colordg.ft14 > div > table > tbody.qita tr'
+      )) {
+        res.push(
+          Array.from(tr.querySelectorAll('td'))
+            .map(t => `${parseTd(t)}${t.textContent}`.replace(/\s/g, ''))
+            .map(t => t.replace('㎡', ''))
+            .map(t => t.replace('%', ''))
+            .map(t => t.trim())
+        );
+      }
+    } catch (err) {
+      console.log(err)
     }
 
     finallyData = finallyData.concat(res);
