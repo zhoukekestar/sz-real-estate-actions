@@ -1,7 +1,7 @@
 const sheetV2 = require('../sheet-v2');
 const sellDetail = require('./loupan-sell-detai');
 
-const LOUPAN_LIST = ['33_430947781'];
+const LOUPAN_LIST = ['33_430947781', '33_3158256'];
 
 !(async () => {
 

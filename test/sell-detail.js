@@ -1,7 +1,8 @@
 const sheetV2 = require('../src/sheet-v2');
 const sellDetail = require('../src/tmsf/loupan-sell-detai');
 
-const LOUPAN_ID = '33_430947781';
+const LOUPAN_ID = '33_430947781'; // 上悦城
+// const LOUPAN_ID = '33_3158256'; // 高铁新城
 
 !(async () => {
   const d = new Date();
