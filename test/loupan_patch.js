@@ -1,9 +1,7 @@
-const sheetV2 = require('../sheet-v2');
-const sellDetail = require('./loupan-sell-detai');
-require('./total');
+const sheetV2 = require('../src/sheet-v2');
+const sellDetail = require('../src/tmsf/loupan-sell-detai');
 
-const LOUPAN_LIST = ['33_430947781', '33_3158256', '33_135092'];
-
+const LOUPAN_LIST = ['33_135092'];
 
 !(async () => {
 
