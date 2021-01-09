@@ -1,7 +1,7 @@
 const sheetV2 = require('../src/sheet-v2');
 const sellDetail = require('../src/tmsf/loupan-sell-detai');
 
-const LOUPAN_LIST = ['33_135092'];
+const LOUPAN_LIST = ['33_209800506'];
 
 !(async () => {
 
@@ -12,7 +12,7 @@ const LOUPAN_LIST = ['33_135092'];
       const d = new Date();
       const filename = `SELL_${LOUPAN_ID}_${d.getFullYear()}-${
         d.getMonth() + 1
-      }-${d.getDate()}`;
+      }-${d.getDate() - 1}`;
 
       const data = await sellDetail(LOUPAN_ID);
 
