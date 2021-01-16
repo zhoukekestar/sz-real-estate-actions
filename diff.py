@@ -40,6 +40,12 @@ result_file = open("result.txt", "w")
 names = [
   'SELL_33_1770989_2021-1-8',
   'SELL_33_1770989_2021-1-9',
+  'SELL_33_1770989_2021-1-10',
+  'SELL_33_1770989_2021-1-11',
+  'SELL_33_1770989_2021-1-12',
+  'SELL_33_1770989_2021-1-13',
+  'SELL_33_1770989_2021-1-14',
+  'SELL_33_1770989_2021-1-15',
 ]
 # 恒大未来城
 # names = [
@@ -50,7 +56,7 @@ names = [
 # names = ['SELL-TOTAL_2020-12-27', 'SELL-TOTAL_2020-12-28']
 def read_excel():
   #打开文件
-  wb = load_workbook('/Users/zhoukeke/Downloads/data2.xlsx')
+  wb = load_workbook('/Users/zhoukeke/Downloads/20200116.xlsx')
   before = []
   after = []
 
