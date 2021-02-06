@@ -18,3 +18,11 @@ sz-real-estate-actions
   * 未传入环境变量导致
 * 无任何返回或错误提示
   * 请使用 http 代理，并确保未使用 socks 代理
+
+
+## 新建文件
+* 新建 sheet 文件
+* 重命名第一个 sheet 为 data
+* 邀请共享账号：
+githubactions@quickstart-1602919096459.iam.gserviceaccount.com
+* 修改 sheet 和 sheet-v2 中的 spreadsheetId

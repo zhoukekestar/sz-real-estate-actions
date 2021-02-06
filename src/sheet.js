@@ -15,6 +15,8 @@ const credentials = {
     'https://www.googleapis.com/robot/v1/metadata/x509/githubactions%40quickstart-1602919096459.iam.gserviceaccount.com',
 };
 
+const spreadsheetId = '1tqWw9cmb0HqLZ-MYICptZW4SmS4Yk-E-9SApDMd5gz0'
+
 module.exports = async (values, range = 'data') => {
   const client = new google.auth.GoogleAuth({
     scopes,
@@ -32,7 +34,7 @@ module.exports = async (values, range = 'data') => {
   // console.log(res.data.values);
 
   await sheets.spreadsheets.values.append({
-    spreadsheetId: '1SnADYAtfqc0V9MczRF5QQ8s8UW-nldIJS5IS5LvkEVc',
+    spreadsheetId,
     range,
     valueInputOption: 'RAW',
     resource: {

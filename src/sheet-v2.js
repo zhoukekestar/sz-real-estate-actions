@@ -15,7 +15,7 @@ const credentials = {
     'https://www.googleapis.com/robot/v1/metadata/x509/githubactions%40quickstart-1602919096459.iam.gserviceaccount.com',
 };
 
-const spreadsheetId = '1SnADYAtfqc0V9MczRF5QQ8s8UW-nldIJS5IS5LvkEVc';
+const spreadsheetId = '1tqWw9cmb0HqLZ-MYICptZW4SmS4Yk-E-9SApDMd5gz0';
 let isInited = false;
 
 async function init() {
